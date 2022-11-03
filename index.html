@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+    <style>
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0;}
+      #map{ height: 100% }
+    </style>
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.ie.css" />
+<![endif]-->
+
+<script src="leaflet/leaflet-src.js"></script>
+<script type="text/javascript" src="leaflet/leaflet.ajax.js"></script>
+<script src="leaflet/spin.js"></script>
+<script src="leaflet/leaflet.spin.js"></script>
+
+
+    <title>Tugas Batas Desa</title>
+    </head>
+    <body>
+    <div id="map"></div>
+      <script type="text/javascript">
+
+    var m = L.map('map').setView([-8.7063873,116.3393212], 14);
+    var mopt = {
+        url:  'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+        options: { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }
+    };
+    var mq = L.tileLayer(mopt.url, mopt.options);
+    mq.addTo(m);
+
+function popUp(f,l){
+    var out = [];
+    if (f.properties){
+        for(key in f.properties){
+            out.push(key+": "+f.properties[key]);
+        }
+        l.bindPopup(out.join("<br />"));
+    }
+}
+var jsonTest = new L.GeoJSON.AJAX(["batunyala.geojson"],{onEachFeature:popUp}).addTo(m);
+
+    var marker = L.marker([-8.73498, 116.31350]).addTo(m)
+        .bindPopup('<b>Kantor Desa batunyala.').openPopup();
+         var marker = L.marker([-8.73017, 116.31231]).addTo(m)
+                .bindPopup('<b>Puskesmas Desa batunyala.').openPopup();
+                 var marker = L.marker([-8.72741, 116.30709]).addTo(m)
+                .bindPopup('<b>LKP GenerasiBintang.').openPopup();
+                var marker = L.marker([-8.72579, 116.30498]).addTo(m)
+                .bindPopup('<b>Putra Futsal.').openPopup();
+                var marker = L.marker([-8.72774, 116.31040]).addTo(m)
+                .bindPopup('<b>MTS Nurussabah.').openPopup();
+                var marker = L.marker([-8.72984, 116.31614]).addTo(m)
+                .bindPopup('<b>Masjid Nurul Huda.').openPopup();
+                var marker = L.marker([-8.73286, 116.31569]).addTo(m)
+                .bindPopup('<b>Masjid MTS Darussalam.').openPopup();
+                var marker = L.marker([-8.73260, 116.31548]).addTo(m)
+                .bindPopup('<b>Masjid Masjid Batunyala.').openPopup();
+                var marker = L.marker([-8.73210, 116.31515]).addTo(m)
+                .bindPopup('<b>SDN 1 Batunyala.').openPopup();
+                var marker = L.marker([-8.73210, 116.31515]).addTo(m)
+                .bindPopup('<b>SDN 1 Batunyala.').openPopup();
+                var marker = L.marker([-8.73779, 116.32668]).addTo(m)
+                .bindPopup('<b>POLSEK PRATENG.').openPopup();
+                var marker = L.marker([-8.73396, 116.31671]).addTo(m)
+                .bindPopup('<b>Kantor Camat PRATENG.').openPopup();
+                var marker = L.marker([-8.73508, 116.31877]).addTo(m)
+                .bindPopup('<b>KUA PRATENG.').openPopup();
+                var marker = L.marker([-8.7833, 116.32213]).addTo(m)
+                .bindPopup('<b>Masjid Nurul Iman.').openPopup();
+                var marker = L.marker([-8.73469, 116.31731]).addTo(m)
+                .bindPopup('<b>SMPN 2 Praya Tengah.').openPopup();
+                var marker = L.marker([-8.73830, 116.32288]).addTo(m)
+                .bindPopup('<b>SDN 3 Batunyala.').openPopup();
+                var marker = L.marker([-8.73076, 116.31300]).addTo(m)
+                .bindPopup('<b>SDN 2 Batunyala.').openPopup();
+                var marker = L.marker([-8.72462, 116.30472]).addTo(m)
+                .bindPopup('<b>Pasar Hewan PRATENG.').openPopup();
+                var marker = L.marker([-8.72552, 116.30839]).addTo(m)
+                .bindPopup('<b>PT.Lombok Mulia Jaya.').openPopup();
+                var marker = L.marker([-8.72569, 116.30627]).addTo(m)
+                .bindPopup('<b>Rumah Azka Mebel.').openPopup();
+                var marker = L.marker([-8.72830, 116.30572]).addTo(m)
+                .bindPopup('<b>MI Pepekat.').openPopup();
+                var marker = L.marker([-8.72911, 116.30482]).addTo(m)
+                .bindPopup('<b>Masjid Baitul Makmur.').openPopup();
+                var marker = L.marker([-8.72966, 116.31193]).addTo(m)
+                .bindPopup('<b>alai Desa Batunyala.').openPopup();
+                var marker = L.marker([-8.72878, 116.31224]).addTo(m)
+                .bindPopup('<b>PUSKESWAN PRATENG.').openPopup();
+                var marker = L.marker([-8.72599, 116.30274]).addTo(m)
+                .bindPopup('<b>Musholla Nyambung.').openPopup();
+
+
+   
+</script>
+
+
+    </body>
+</html>
